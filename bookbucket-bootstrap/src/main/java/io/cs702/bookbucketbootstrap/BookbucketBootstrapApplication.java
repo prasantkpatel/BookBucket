@@ -1,6 +1,5 @@
 package io.cs702.bookbucketbootstrap;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
@@ -14,7 +13,6 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 import org.json.JSONArray;
 import org.json.JSONException;
