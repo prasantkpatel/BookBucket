@@ -1,0 +1,27 @@
+# Rename this file to "application.yaml"
+datadump:
+    location:
+        author: <author-dump-location> # Should be inside the classpath
+        works: <works-dump-location> # Should be inside the classpath
+spring:
+    data:
+        cassandra:
+            keyspace-name: <keyspace-name>
+            username: <username>
+            password: <password>
+            schema-action: create-if-not-exists
+            request:
+                timeout: 10s
+            connection:
+                connect-timeout: 10s
+                init-query-timeout: 10s              
+
+# Use this configuration if the Cassandra instance is hosted by DataStax Astra
+datastax.astra:
+    secure-connect-bundle: <path-to-secure-bundle>
+
+astra.db:
+    id: <cluster-id>
+    region: <region>
+    keyspace: <keysapace-name>
+    application.token: <application-token>
