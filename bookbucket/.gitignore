@@ -32,5 +32,8 @@ build/
 ### VS Code ###
 .vscode/
 
+### Data Stax Astra ###
+/src/main/resources/secure-connect.zip
+
 ### Spring Boot ###
 /src/main/resources/application.yaml
