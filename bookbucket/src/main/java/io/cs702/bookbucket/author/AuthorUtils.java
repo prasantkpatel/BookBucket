@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AuthorUtils {
-    
+
     public static Author parseAuthor(String jsonString) {
         try {
             JSONObject authorJson = new JSONObject(jsonString);

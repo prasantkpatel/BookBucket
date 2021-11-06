@@ -1,0 +1,36 @@
+# Rename this file to "application.yaml"
+spring:
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: # Copy your client-id here
+                        client-secret: # Copy your client-secret here
+                    github:
+                        client-id: # Copy your client-id here
+                        client-secret: # Copy your client-secret here 
+                        
+    data:
+        cassandra:
+            keyspace-name: # keyspace of your cassandra database instance
+            username: # username for the database
+            password: # password for the database
+            schema-action: create-if-not-exists
+            request:
+                timeout: 10s
+            connection:
+                connect-timeout: 10s
+                init-query-timeout: 10s       
+
+    application.name: bookbucket       
+
+# Use this configuration if the Cassandra instance is hosted by DataStax Astra
+datastax.astra:
+    secure-connect-bundle: # Path to your secure-connect bundle
+
+astra.db:
+    id: # Cluster or DataCenter id
+    region: # Cluster region
+    keyspace: # Keyspace name of your cassandra database
+    application.token: # Application token generated from your organization settings

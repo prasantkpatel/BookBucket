@@ -1,4 +1,4 @@
-package io.cs702.bookbucket.userbooks;
+package io.cs702.bookbucket.userbook;
 
 import java.time.LocalDate;
 
@@ -8,11 +8,14 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
 
+/**
+ * Model that represents a user's interaction with a specific book.
+*/
 @Table("book_by_user_and_book_id")
-public class UserBooks {
+public class UserBook {
     
     @PrimaryKey
-    private UserBooksPrimaryKey key;
+    private UserBookPrimaryKey key;
 
     @Column("started_reading")
     @CassandraType(type = Name.DATE)
@@ -30,11 +33,11 @@ public class UserBooks {
     @CassandraType(type = Name.INT)
     private int rating;
 
-    public UserBooksPrimaryKey getKey() {
+    public UserBookPrimaryKey getKey() {
         return key;
     }
 
-    public void setKey(UserBooksPrimaryKey key) {
+    public void setKey(UserBookPrimaryKey key) {
         this.key = key;
     }
 

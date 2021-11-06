@@ -5,6 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/* Utitlity class for getting spring managed beans into non-spring
+* managed classes. For eg: Utility Classes and POJOs
+*/
 @Component
 public class SpringUtils implements ApplicationContextAware {
 

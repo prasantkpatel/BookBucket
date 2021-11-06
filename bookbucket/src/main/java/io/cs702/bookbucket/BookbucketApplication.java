@@ -9,6 +9,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import io.cs702.bookbucket.configurations.DataStaxAstraConfig;
 
+/**
+ * Main application class with main method that runs the Spring Boot app
+ */
 @SpringBootApplication
 @EnableConfigurationProperties(DataStaxAstraConfig.class)
 public class BookbucketApplication {
@@ -17,10 +20,14 @@ public class BookbucketApplication {
 		SpringApplication.run(BookbucketApplication.class, args);
 	}
 
+	/**
+	 * This is necessary to have the Spring Boot app use the Astra secure bundle to
+	 * connect to the database
+	 */
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraConfig astraConfig) {
 		Path bundle = astraConfig.getSecureConnectBundle().toPath();
 		return builder -> builder.withCloudSecureConnectBundle(bundle);
 	}
-	
+
 }

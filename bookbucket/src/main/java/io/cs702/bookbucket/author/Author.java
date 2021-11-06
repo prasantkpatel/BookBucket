@@ -8,10 +8,15 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
 
+/**
+ * Model that represents the author_by_id table in Cassandra. Stores the author
+ * information retrievable by the author ID
+ */
 @Table(value = "author_by_id")
 public class Author {
 
-    @Id @PrimaryKeyColumn(name = "author_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+    @Id
+    @PrimaryKeyColumn(name = "author_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;
 
     @Column("author_name")
@@ -21,7 +26,7 @@ public class Author {
     @Column("personal_name")
     @CassandraType(type = Name.TEXT)
     private String personalName;
-    
+
     public String getId() {
         return id;
     }
