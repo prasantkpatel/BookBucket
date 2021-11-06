@@ -1,1 +1,3 @@
 # global gitignore
+OAuthSecret.json
+.vscode/
