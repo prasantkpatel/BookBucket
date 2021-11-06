@@ -14,7 +14,8 @@ import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
 @Table("book_by_id")
 public class Book {
 
-    @Id @PrimaryKeyColumn(name = "book_id", ordinal  = 0, type = PrimaryKeyType.PARTITIONED)
+    @Id
+    @PrimaryKeyColumn(name = "book_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;
 
     @Column("name")
@@ -88,7 +89,7 @@ public class Book {
     public void setCoverIds(List<String> coverIds) {
         this.coverIds = coverIds;
     }
-    
+
     public List<String> getAuthorNames() {
         return authorNames;
     }
@@ -96,5 +97,5 @@ public class Book {
     public void setAuthorNames(List<String> authorNames) {
         this.authorNames = authorNames;
     }
-        
+
 }

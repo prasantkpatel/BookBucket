@@ -15,5 +15,5 @@ public class DataStaxAstraConfig {
     public void setSecureConnectBundle(File secureConnectBundle) {
         this.secureConnectBundle = secureConnectBundle;
     }
-    
+
 }
