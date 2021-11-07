@@ -1,4 +1,4 @@
-# BookBucket web app
+# BookBucket web app - [Try it out!](http://bookbucket-webapp.ap-south-1.elasticbeanstalk.com/)
 BookBucket is a web app for browsing/searching book information. This project is for understanding Cassandra as a distributed database and how it seamlessly handles large amounts of data while at the same time being performant and reliable. This project utilizes only a subset of the data to demonstrate functionality. The performance and reliability will still be the same with millions or even billions of data. That's the sheer brilliancy Cassandra carries with it, and this project tries to demonstrate that.
 
 ## Technologies
