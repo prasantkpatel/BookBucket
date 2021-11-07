@@ -1,18 +1,16 @@
 package io.cs702.bookbucket.configurations;
 
-import java.io.File;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "datastax.astra")
 public class DataStaxAstraConfig {
-    private File secureConnectBundle;
+    private String secureConnectBundle;
 
-    public File getSecureConnectBundle() {
+    public String getSecureConnectBundle() {
         return secureConnectBundle;
     }
 
-    public void setSecureConnectBundle(File secureConnectBundle) {
+    public void setSecureConnectBundle(String secureConnectBundle) {
         this.secureConnectBundle = secureConnectBundle;
     }
 

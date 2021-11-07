@@ -1,6 +1,6 @@
 package io.cs702.bookbucket;
 
-import java.nio.file.Path;
+import java.io.InputStream;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,8 +26,10 @@ public class BookbucketApplication {
 	 */
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraConfig astraConfig) {
-		Path bundle = astraConfig.getSecureConnectBundle().toPath();
+
+		InputStream bundle = this.getClass().getClassLoader().getResourceAsStream(astraConfig.getSecureConnectBundle());
 		return builder -> builder.withCloudSecureConnectBundle(bundle);
+
 	}
 
 }
